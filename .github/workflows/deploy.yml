@@ -13,6 +13,11 @@ jobs:
       - name: Code checkout
         uses: actions/checkout@v4
 
+      - name: Run Tests
+        run: |
+          test -f index.html
+          echo "Test passed: index.html exists"
+
       - name: Build Docker Image
         run: docker build -t devops-cicd-demo .
 
